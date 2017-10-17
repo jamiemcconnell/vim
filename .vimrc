@@ -78,3 +78,8 @@ nnoremap <Leader>r :CtrlPMRUFiles<CR>
 
 " Autocompletion
 let g:tern#is_show_argument_hints_enabled=1
+
+" Ack
+" Exclamation mark causes it to _not_ open the first result by default
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
