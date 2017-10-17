@@ -73,11 +73,16 @@ let NERDTreeIgnore=['\~$', '\.git$', '.DS_Store', '.tern-port']
 let g:airline#extensions#tabline#enabled = 1
 
 " CtrlP
+let g:ctrlp_max_height = 18
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>r :CtrlPMRUFiles<CR>
 
 " Autocompletion
 let g:tern#is_show_argument_hints_enabled=1
+
+" FZF Search files
+nnoremap <Leader>f :FZF<CR>
 
 " Ack
 " Exclamation mark causes it to _not_ open the first result by default

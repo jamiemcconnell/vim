@@ -28,3 +28,12 @@
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = git@github.com:elzr/vim-json.git
+[submodule "bundle/fzf.vim"]
+	path = bundle/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
+[submodule "bundle/fzf"]
+	path = bundle/fzf
+	url = git@github.com:junegunn/fzf.git
