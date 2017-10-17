@@ -88,3 +88,22 @@ nnoremap <Leader>f :FZF<CR>
 " Exclamation mark causes it to _not_ open the first result by default
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:Airline_theme='dark'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+nmap <leader>. :bnext<CR>
+nmap <leader>, :bprevious<CR>
+nmap <silent>1 <Plug>AirlineSelectTab1
+nmap <silent>2 <Plug>AirlineSelectTab2
+nmap <silent>3 <Plug>AirlineSelectTab3
+nmap <silent>4 <Plug>AirlineSelectTab4
+nmap <silent>5 <Plug>AirlineSelectTab5
+nmap <silent>6 <Plug>AirlineSelectTab6
+nmap <silent>7 <Plug>AirlineSelectTab7
+nmap <silent>8 <Plug>AirlineSelectTab8
+nmap <silent>9 <Plug>AirlineSelectTab9
