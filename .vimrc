@@ -2,7 +2,13 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-colorscheme base16-bright
+set encoding=utf-8
+set t_Co=256
+"let base16colorspace=256
+"set background=dark
+set termguicolors
+
+colorscheme base16-material-darker
 
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
@@ -34,6 +40,7 @@ set nonumber
 " speed up syntax highlighting
 set ignorecase					" Make searching case insensitive
 set smartcase 					" ... unless the query has capital letters.
+set hlsearch
 set noshowmatch         " Do not show matching brackets by flickering
 set noshowmode          " We show the mode with airline or lightline
 set nocursorcolumn
@@ -68,3 +75,6 @@ let g:airline#extensions#tabline#enabled = 1
 " CtrlP
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>r :CtrlPMRUFiles<CR>
+
+" Autocompletion
+let g:tern#is_show_argument_hints_enabled=1
