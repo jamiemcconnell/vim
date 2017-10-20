@@ -30,7 +30,6 @@ set tabstop=2           " Render TABs using this many spaces.
 set shiftwidth=2        " Indentation amount for < and > commands.
 set softtabstop=2
 set splitright          " Vertical split to right of current.
-set splitbelow
 set nostartofline       " Do not jump to first character with page commands.
 "set autochdir           " Automcatically Change Dir when opening file
 set so=7                " Scroll n lines from the top/bottom
@@ -68,6 +67,10 @@ let NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize=45
 let g:NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\~$', '\.git$', '.DS_Store', '.tern-port']
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -107,3 +110,6 @@ nmap <silent>6 <Plug>AirlineSelectTab6
 nmap <silent>7 <Plug>AirlineSelectTab7
 nmap <silent>8 <Plug>AirlineSelectTab8
 nmap <silent>9 <Plug>AirlineSelectTab9
+
+"Escape is slow: https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+set timeoutlen=1000 ttimeoutlen=0
