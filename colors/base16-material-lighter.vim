@@ -2,7 +2,7 @@
 
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
-" Chalk scheme by Chris Kempson (http://chriskempson.com)
+" Material Lighter scheme by Nate Peterson
 
 " This enables the coresponding base16-shell script to run so that
 " :colorscheme works in terminals supported by base16-shell scripts
@@ -10,27 +10,27 @@
 "   let g:base16_shell_path=base16-builder/output/shell/
 if !has('gui_running')
   if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-chalk.sh"
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-material-lighter.sh"
   endif
 endif
 
 " GUI color definitions
-let s:gui00 = "151515"
-let s:gui01 = "202020"
-let s:gui02 = "303030"
-let s:gui03 = "505050"
-let s:gui04 = "b0b0b0"
-let s:gui05 = "d0d0d0"
-let s:gui06 = "e0e0e0"
-let s:gui07 = "f5f5f5"
-let s:gui08 = "fb9fb1"
-let s:gui09 = "eda987"
-let s:gui0A = "ddb26f"
-let s:gui0B = "acc267"
-let s:gui0C = "12cfc0"
-let s:gui0D = "6fc2ef"
-let s:gui0E = "e1a3ee"
-let s:gui0F = "deaf8f"
+let s:gui00 = "FAFAFA"
+let s:gui01 = "E7EAEC"
+let s:gui02 = "CCEAE7"
+let s:gui03 = "CCD7DA"
+let s:gui04 = "8796B0"
+let s:gui05 = "80CBC4"
+let s:gui06 = "80CBC4"
+let s:gui07 = "FFFFFF"
+let s:gui08 = "FF5370"
+let s:gui09 = "F76D47"
+let s:gui0A = "FFB62C"
+let s:gui0B = "91B859"
+let s:gui0C = "39ADB5"
+let s:gui0D = "6182B8"
+let s:gui0E = "7C4DFF"
+let s:gui0F = "E53935"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -61,22 +61,22 @@ endif
 
 " Neovim terminal colours
 if has("nvim")
-  let g:terminal_color_0 =  "#151515"
-  let g:terminal_color_1 =  "#fb9fb1"
-  let g:terminal_color_2 =  "#acc267"
-  let g:terminal_color_3 =  "#ddb26f"
-  let g:terminal_color_4 =  "#6fc2ef"
-  let g:terminal_color_5 =  "#e1a3ee"
-  let g:terminal_color_6 =  "#12cfc0"
-  let g:terminal_color_7 =  "#d0d0d0"
-  let g:terminal_color_8 =  "#505050"
-  let g:terminal_color_9 =  "#eda987"
-  let g:terminal_color_10 = "#202020"
-  let g:terminal_color_11 = "#303030"
-  let g:terminal_color_12 = "#b0b0b0"
-  let g:terminal_color_13 = "#e0e0e0"
-  let g:terminal_color_14 = "#deaf8f"
-  let g:terminal_color_15 = "#f5f5f5"
+  let g:terminal_color_0 =  "#FAFAFA"
+  let g:terminal_color_1 =  "#FF5370"
+  let g:terminal_color_2 =  "#91B859"
+  let g:terminal_color_3 =  "#FFB62C"
+  let g:terminal_color_4 =  "#6182B8"
+  let g:terminal_color_5 =  "#7C4DFF"
+  let g:terminal_color_6 =  "#39ADB5"
+  let g:terminal_color_7 =  "#80CBC4"
+  let g:terminal_color_8 =  "#CCD7DA"
+  let g:terminal_color_9 =  "#F76D47"
+  let g:terminal_color_10 = "#E7EAEC"
+  let g:terminal_color_11 = "#CCEAE7"
+  let g:terminal_color_12 = "#8796B0"
+  let g:terminal_color_13 = "#80CBC4"
+  let g:terminal_color_14 = "#E53935"
+  let g:terminal_color_15 = "#FFFFFF"
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_7
   if &background == "light"
@@ -88,7 +88,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-chalk"
+let g:colors_name = "base16-material-lighter"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
