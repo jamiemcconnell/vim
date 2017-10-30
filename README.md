@@ -2,7 +2,10 @@
 
 ### Install
 
-`cp ~/.vimrc ~/.vimrc-orig`
+`cp ~/.vimrc ~/.vimrc-orig`  
+`git clone git@github.com:jamiemcconnell/vim.git vim`
+`cd vim`
+`ln -s ${pwd} ~/.vim`  
 `ln -s $(pwd)/.vimrc ~/.vimrc`
 
 ### Tern Setup
@@ -14,7 +17,12 @@
 - Run `git submodule update --init —recursive` inside vim repo folder
 - Run `./install.py --tern-completer` from `bundle/YouCompleteMe`
 
+### Ack
+
+- Run `brew install ack`
+
 ### Packages
+
 * [github.com:Valloric/YouCompleteMe.git](git@github.com:Valloric/YouCompleteMe.git)
 * [github.com:mileszs/ack.vim.git](git@github.com:mileszs/ack.vim.git)
 * [github.com/kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
