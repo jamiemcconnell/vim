@@ -8,7 +8,7 @@ set t_Co=256
 "set background=dark
 set termguicolors
 
-colorscheme base16-material-darker
+colorscheme base16-solarflare
 
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
@@ -67,7 +67,7 @@ let NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize=45
 let g:NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\~$', '\.git$', '.DS_Store', '.tern-port']
-let NERDTreeQuitOnOpen = 1
+"let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -83,6 +83,7 @@ nnoremap <Leader>r :CtrlPMRUFiles<CR>
 
 " Autocompletion
 let g:tern#is_show_argument_hints_enabled=1
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " FZF Search files
 nnoremap <Leader>f :FZF<CR>
@@ -113,3 +114,6 @@ nmap <silent>9 <Plug>AirlineSelectTab9
 
 "Escape is slow: https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
+
+"JSON
+let g:vim_json_syntax_conceal = 0
