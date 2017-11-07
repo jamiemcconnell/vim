@@ -8,7 +8,7 @@ set t_Co=256
 "set background=dark
 set termguicolors
 
-colorscheme base16-solarflare
+colorscheme base16-summerfruit-dark
 
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
@@ -72,9 +72,6 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-
 " CtrlP
 let g:ctrlp_max_height = 18
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
@@ -117,3 +114,9 @@ set timeoutlen=1000 ttimeoutlen=0
 
 "JSON
 let g:vim_json_syntax_conceal = 0
+
+"Javascript
+let g:javascript_plugin_flow = 1
+
+"Ale
+let g:airline#extensions#ale#enabled = 1
