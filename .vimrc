@@ -120,3 +120,7 @@ let g:javascript_plugin_flow = 1
 
 "Ale
 let g:airline#extensions#ale#enabled = 1
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\  'jsx': ['eslint']
+\}

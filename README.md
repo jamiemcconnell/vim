@@ -21,6 +21,14 @@
 
 - Run `brew install ack`
 
+### A.L.E
+
+- Run `cd ~ && yarn global add eslint`
+- Follow the instrutions - use Airbnb base, select to use it for Linting
+- Install dotfiles from your dotfiles project
+
+
+
 ### Packages
 
 * [github.com:Valloric/YouCompleteMe.git](git@github.com:Valloric/YouCompleteMe.git)
