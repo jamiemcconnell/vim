@@ -28,6 +28,12 @@
 - Install dotfiles from your dotfiles project
 
 
+### ESLint
+
+globally install `eslint babel-eslint eslint-plugin-flowtype`
+
+run `npm install eslint babel-eslint eslint-plugin-flowtype --save-dev` in the projects
+
 
 ### Packages
 
