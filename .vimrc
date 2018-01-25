@@ -8,7 +8,7 @@ set t_Co=256
 "set background=dark
 set termguicolors
 
-colorscheme base16-monokai
+color base16-dracula
 
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
