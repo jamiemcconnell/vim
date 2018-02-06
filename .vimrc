@@ -6,9 +6,9 @@ set encoding=utf-8
 set t_Co=256
 "let base16colorspace=256
 "set background=dark
-set termguicolors
+"set termguicolors
 
-color base16-dracula
+"color base16-dracula
 
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
@@ -124,3 +124,9 @@ let g:ale_fixers = {
 \  'javascript': ['eslint'],
 \  'jsx': ['eslint']
 \}
+
+" Match vim theme to terminal base16 ones
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif

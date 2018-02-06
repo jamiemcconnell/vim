@@ -19,9 +19,6 @@
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = git@github.com:ternjs/tern_for_vim.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe.git
 [submodule "bundle/vim-tmux-navigator"]
 	path = bundle/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator.git
@@ -61,3 +58,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
