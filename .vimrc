@@ -79,8 +79,10 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>r :CtrlPMRUFiles<CR>
 
 " Autocompletion
-let g:tern#is_show_argument_hints_enabled=1
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:tern#is_show_argument_hints_enabled=1
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
 
 " FZF Search files
 nnoremap <Leader>f :FZF<CR>
@@ -117,6 +119,9 @@ let g:vim_json_syntax_conceal = 0
 
 "Javascript
 let g:javascript_plugin_flow = 1
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
 
 "Ale
 let g:airline#extensions#ale#enabled = 1
