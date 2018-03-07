@@ -127,7 +127,8 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:airline#extensions#ale#enabled = 1
 let g:ale_fixers = {
 \  'javascript': ['eslint'],
-\  'jsx': ['eslint']
+\  'jsx': ['eslint'],
+\  'javascript.jsx': ['eslint']
 \}
 
 " Match vim theme to terminal base16 ones
