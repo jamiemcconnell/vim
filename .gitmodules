@@ -19,9 +19,6 @@
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = git@github.com:ternjs/tern_for_vim.git
-[submodule "bundle/vim-tmux-navigator"]
-	path = bundle/vim-tmux-navigator
-	url = git@github.com:christoomey/vim-tmux-navigator.git
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
@@ -52,9 +49,6 @@
 [submodule "bundle/vim-autoformat"]
 	path = bundle/vim-autoformat
 	url = git@github.com:Chiel92/vim-autoformat.git
-[submodule "bundle/dracula-theme"]
-	path = bundle/dracula-theme
-	url = git@github.com:dracula/vim.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
