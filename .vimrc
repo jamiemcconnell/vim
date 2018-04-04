@@ -92,6 +92,9 @@ nnoremap <Leader>f :FZF<CR>
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
+" ctags/tagbar
+nmap <leader> t :TagbarToggle<CR>
+
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
