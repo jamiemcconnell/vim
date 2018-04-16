@@ -53,6 +53,9 @@ set nobackup
 set nowb
 set noswapfile
 
+" Copy/Paste
+set clipboard=unnamed
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
