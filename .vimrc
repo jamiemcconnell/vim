@@ -67,7 +67,7 @@ map <leader>- :NERDTreeToggle<CR>
 let NERDTreeChDirMode=1
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=35
 let g:NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\~$', '\.git$', '.DS_Store', '.tern-port']
 "let NERDTreeQuitOnOpen = 1
@@ -96,7 +96,7 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
 " ctags/tagbar
-nmap <leader> t :TagbarToggle<CR>
+" nmap <leader> t :TagbarToggle<CR>
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -142,3 +142,11 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
+let g:vimwiki_list = [{'path': '~/Source/vimwiki'}]
