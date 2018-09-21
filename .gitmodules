@@ -76,3 +76,15 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vim-carbon-now-sh"]
+	path = vim-carbon-now-sh
+	url = git@github.com:kristijanhusak/vim-carbon-now-sh.git
+[submodule "bundle/vim-carbon-now-sh"]
+	path = bundle/vim-carbon-now-sh
+	url = git@github.com:kristijanhusak/vim-carbon-now-sh.git
+[submodule "bundle/vim-easy-align"]
+	path = bundle/vim-easy-align
+	url = git@github.com:junegunn/vim-easy-align.git
+[submodule "bundle/table-mode"]
+	path = bundle/table-mode
+	url = git@github.com:dhruvasagar/vim-table-mode.git

@@ -67,7 +67,7 @@ map <leader>- :NERDTreeToggle<CR>
 let NERDTreeChDirMode=1
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
-let g:NERDTreeWinSize=35
+let g:NERDTreeWinSize=25
 let g:NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\~$', '\.git$', '.DS_Store', '.tern-port']
 "let NERDTreeQuitOnOpen = 1
