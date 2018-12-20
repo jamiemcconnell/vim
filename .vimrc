@@ -80,6 +80,7 @@ let g:ctrlp_max_height = 18
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>r :CtrlPMRUFiles<CR>
+nnoremap <Leader>t :CtrlPTag<CR>
 
 " Autocompletion
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -96,7 +97,7 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
 " ctags/tagbar
-" nmap <leader> t :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -150,3 +151,22 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
 let g:vimwiki_list = [{'path': '~/Source/vimwiki'}]
+
+let g:tagbar_type_typescript = {                                                  
+  \ 'ctagsbin' : 'tstags',                                                        
+  \ 'ctagsargs' : '-f-',                                                           
+  \ 'kinds': [                                                                     
+    \ 'e:enums:0:1',                                                               
+    \ 'f:function:0:1',                                                            
+    \ 't:typealias:0:1',                                                           
+    \ 'M:Module:0:1',                                                              
+    \ 'I:import:0:1',                                                              
+    \ 'i:interface:0:1',                                                           
+    \ 'C:class:0:1',                                                               
+    \ 'm:method:0:1',                                                              
+    \ 'p:property:0:1',                                                            
+    \ 'v:variable:0:1',                                                            
+    \ 'c:const:0:1',                                                              
+  \ ],                                                                            
+  \ 'sort' : 0                                                                    
+\ }
