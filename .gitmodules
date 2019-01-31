@@ -16,9 +16,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
-[submodule "bundle/tern_for_vim"]
-	path = bundle/tern_for_vim
-	url = git@github.com:ternjs/tern_for_vim.git
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
