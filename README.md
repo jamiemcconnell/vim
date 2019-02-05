@@ -20,6 +20,9 @@
 ### Ack
 - Run `brew install ack`
 
+### Install Packages
+- Run `:PackageInstall`
+
 ### Packages
 * [github.com/Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe.git)
 * [github.com:mileszs/ack.vim.git](git@github.com:mileszs/ack.vim.git)

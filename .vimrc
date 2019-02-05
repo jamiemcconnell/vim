@@ -1,4 +1,38 @@
-execute pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'elzr/vim-json'
+Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf'
+Plugin 'mxw/vim-jsx'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-surround'
+Plugin 'Raimondi/delimitMate'
+Plugin 'w0rp/ale'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'tpope/vim-fugitive'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'junegunn/gv.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'majutsushi/tagbar'
+Plugin 'ianks/vim-tsx'
+Plugin 'vimwiki/vimwiki'
+Plugin 'kristijanhusak/vim-carbon-now-sh'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'dhruvasagar/vim-table-mode'
+call vundle#end()
+
 syntax on
 filetype plugin indent on
 
