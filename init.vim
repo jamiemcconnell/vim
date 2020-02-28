@@ -29,6 +29,7 @@ let g:prettier#config#single_quote = 'true'
 
 "Colorschemes
 Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
 
 " """""""""""" Autocompletion """"""""""""""""""""""""""""""""
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
@@ -91,12 +92,19 @@ Plug 'davidhalter/jedi-vim'
 "" Docker
 Plug 'ekalinin/Dockerfile.vim'
 
-"" Go
+""" PHP
+Plug 'StanAngeloff/php.vim'
+
+"""Go
 Plug 'fatih/vim-go'
 let g:go_fmt_autosave=0
 
 "" Nginx
 Plug 'chr4/nginx.vim'
+
+"" GraphQL
+"Plug 'jparise/vim-graphql'
+"let g:graphql_javascript_tags=[]
 
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """" CSS syntax highlight
@@ -206,6 +214,10 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" delete line without copy
+nnoremap d "_d
+vnoremap d "_d
 
 " nerd-tree
 " map <leader>- :NERDTreeToggle<CR>
@@ -567,7 +579,11 @@ augroup END
 
 """"""""""""" Color Schemes """"""""""""""""
 set termguicolors
-colorscheme onedark
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+" colorscheme onedark
 " colorscheme japanesque
 " colorscheme srcery
 " colorscheme materialtheme
@@ -575,7 +591,7 @@ colorscheme onedark
 " autocmd FileType python colorscheme onedark
 
 " Normal         xxx ctermfg=145 ctermbg=235 guifg=#ABB2BF guibg=#282C34
-highlight Normal guibg=#202328
+"highlight Normal guibg=#202328
 highlight MatchParen guifg=#C678DD guibg=#504066
 highlight LineNr    guifg=#151822
 highlight CursorLineNr guifg=#56B6C2
@@ -606,8 +622,8 @@ hi Visual guibg=#364652
 hi Keyword guifg=#ba9ef7
 hi Function guifg=#5682A3
 
-" dark grey, RUST preproc
-hi Preproc guifg=#37505C
+" dark grey, defx folder-list
+hi Preproc guifg=#5e727c
 
 """ Pink
 """""" vim-jsx ONLY
@@ -704,16 +720,6 @@ hi tsxTypes guifg=#8D779C
 hi tsxIfOperator guifg=#56B6C2
 hi tsxElseOperator guifg=#56B6C2
 
-
-" rust cyan
-hi rustModPath guifg=#DF997A
-hi rustFuncCall guifg=#60A0D0
-hi rustFuncName guifg=#60A0D0
-hi rustTrait guifg=#C898C8
-
-hi rustFoldBraces guifg=#FFEAD0
-hi rustBoxPlacementBalance guifg=#C898C8
-
 hi ALEError      guibg=#612E2D cterm=italic
 hi ALEWarning    guibg=#523D30 cterm=italic
 " Coc linting colors
@@ -726,7 +732,6 @@ hi CocHintHighlight    guibg=#4c4c4c cterm=italic
 
 hi CocErrorSign   guifg=#CD584F
 hi CocWarningSign guifg=#D3785D
-
 
 
 " Identify the syntax highlighting group used at the cursor
@@ -744,8 +749,8 @@ nmap <Leader>s :%s/\t/    /g<CR>
 autocmd FileType typescript.tsx,javascript.tsx,javascript,typescript nmap <Leader>s :%s/\t/  /g<CR>
 " au BufNewFile,BufRead *.js *.html nmap <Leader>s :%s/\t/  /g<CR>
 autocmd FileType python,rust,haskell,markdown setlocal shiftwidth=4 tabstop=4
-autocmd FileType typescript.tsx,javascript.tsx,javascript,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=4 noexpandtab
-set softtabstop=4 noexpandtab
+autocmd FileType typescript.tsx,javascript.tsx,javascript,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+set softtabstop=2
 " au BufNewFile,BufRead *.hbs setlocal ft=d
 autocmd BufNewFile,BufRead *.ts,*.js set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.vue set filetype=vue.typescript
