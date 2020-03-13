@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+"set redrawtime=10000
 
 call plug#begin('~/.vim/plugged')
 Plug 'VundleVim/Vundle.vim'
@@ -69,14 +70,14 @@ endfunction
 "      \ pumvisible() ? "\<C-n>" : "\<TAB>"
 "			\ coc#refresh()
 
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'stable, 'rls']},
-        \ 'whitelist': ['rust'],
-        \ 'blacklist': ['javascript', 'jsx', 'tsx', 'typescript']
-        \ })
-endif
+"if executable('rls')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'rls',
+"        \ 'cmd': {server_info->['rustup', 'run', 'stable, 'rls']},
+"        \ 'whitelist': ['rust'],
+"        \ 'blacklist': ['javascript', 'jsx', 'tsx', 'typescript']
+"        \ })
+"endif
 
 
 " Completion - youcompleteme
@@ -87,64 +88,68 @@ Plug 'Valloric/YouCompleteMe', {
      \ }
 
 """ Python
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 
 "" Docker
 Plug 'ekalinin/Dockerfile.vim'
 
 """ PHP
-Plug 'StanAngeloff/php.vim'
+"Plug 'StanAngeloff/php.vim'
 
 """Go
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 let g:go_fmt_autosave=0
 
 "" Nginx
-Plug 'chr4/nginx.vim'
+"Plug 'chr4/nginx.vim'
 
 "" GraphQL
 "Plug 'jparise/vim-graphql'
 "let g:graphql_javascript_tags=[]
 
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 """" CSS syntax highlight
-Plug 'othree/csscomplete.vim'
+"Plug 'othree/csscomplete.vim'
 " Add Support css3 properties
-Plug 'hail2u/vim-css3-syntax'
-Plug 'cakebaker/scss-syntax.vim'
+"Plug 'hail2u/vim-css3-syntax'
+"Plug 'cakebaker/scss-syntax.vim'
 " highlight hex colors in color
-au BufRead,BufNewFile *.scss set filetype=scss.css
-au BufRead,BufNewFile *.sass set filetype=sass.css
+"au BufRead,BufNewFile *.scss set filetype=scss.css
+"au BufRead,BufNewFile *.sass set filetype=sass.css
 " scss lint
-Plug 'gcorne/vim-sass-lint'
+"Plug 'gcorne/vim-sass-lint'
 
 """"""" Javascript
-Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'pangloss/vim-javascript'
+"Plug 'yuezk/vim-js'
+"Plug 'maxmellon/vim-jsx-pretty'
 " Syntax highlighting for .jsx (typescript)
-"Plug 'peitalin/vim-jsx-typescript'
+Plug 'peitalin/vim-jsx-typescript'
 "" Typescript "
 Plug 'leafgarland/typescript-vim'
+"let g:typescript_indent_disable = 1
+"Plug 'sheerun/vim-polyglot'
 
 """"""" Brackets & Parentheses highlighting
 " Allow autoclose paired characters like [,] or (,),
 Plug 'jiangmiao/auto-pairs'
 " Highlights the matching HTML tag when the cursor is positioned on a tag.
-Plug 'Valloric/MatchTagAlways'
+" Plug 'Valloric/MatchTagAlways'
 " Valloric/MatchTagAlways"
-nnoremap <leader>% :MtaJumpToOtherTag<cr>
-let g:mta_filetypes = {
-            \ 'html' : 1, 'xhtml' : 1, 'xml' : 1,
-            \ 'javascript' : 1,
-            \ 'javascript.jsx' : 1,
-            \ 'javascript.tsx' : 1,
-            \ 'typescript.tsx' : 1,
-            \ 'typescript' : 1
-            \}
+"nnoremap <leader>% :MtaJumpToOtherTag<cr>
+"let g:mta_filetypes = {
+"            \ 'html' : 1, 'xhtml' : 1, 'xml' : 1,
+"            \ 'javascript' : 1,
+"            \ 'javascript.jsx' : 1,
+"            \ 'javascript.tsx' : 1,
+"            \ 'typescript.tsx' : 1,
+"            \ 'typescript' : 1
+"            \}
 
 call plug#end()
 
-syntax on
 filetype plugin indent on
+syntax on
 
 set encoding=utf-8
 set t_Co=256
