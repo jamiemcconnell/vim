@@ -29,11 +29,17 @@ let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#single_quote = 'true'
 
 "Colorschemes
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
 Plug 'ayu-theme/ayu-vim'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'skbolton/embark'
 
 " """""""""""" Autocompletion """"""""""""""""""""""""""""""""
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
 " Disable just for .tsx
 " au BufEnter *.tsx,*.ts,*.jsx,*.js,*.py :CocDisable
 " :CocInstall coc-json coc-rls
@@ -53,6 +59,29 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 " Highlight symbol under cursor on CursorHold
 " autocmd CursorHold * silent call CocActionAsync('highlight')
 "nnoremap <silent> H :call CocActionAsync('highlight')<CR>
@@ -81,11 +110,11 @@ endfunction
 
 
 " Completion - youcompleteme
-Plug 'Valloric/YouCompleteMe', {
-     \ 'build' : {
-     \     'mac' : './install.py --ts-completer'
-     \    }
-     \ }
+"Plug 'Valloric/YouCompleteMe', {
+"     \ 'build' : {
+"     \     'mac' : './install.py --ts-completer'
+"     \    }
+"     \ }
 
 """ Python
 "Plug 'davidhalter/jedi-vim'
@@ -94,17 +123,17 @@ Plug 'Valloric/YouCompleteMe', {
 Plug 'ekalinin/Dockerfile.vim'
 
 """ PHP
-"Plug 'StanAngeloff/php.vim'
+Plug 'StanAngeloff/php.vim'
 
 """Go
-"Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
 let g:go_fmt_autosave=0
 
 "" Nginx
-"Plug 'chr4/nginx.vim'
+Plug 'chr4/nginx.vim'
 
 "" GraphQL
-"Plug 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql'
 "let g:graphql_javascript_tags=[]
 
 "Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -119,20 +148,29 @@ let g:go_fmt_autosave=0
 " scss lint
 "Plug 'gcorne/vim-sass-lint'
 
+"Plug 'juleswang/css.vim'
+Plug 'cakebaker/scss-syntax.vim'
+" highlight hex colors in color
+au BufRead,BufNewFile *.scss set filetype=scss.css
+au BufRead,BufNewFile *.sass set filetype=sass.css
+
 """"""" Javascript
-"Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 "Plug 'yuezk/vim-js'
 "Plug 'maxmellon/vim-jsx-pretty'
 " Syntax highlighting for .jsx (typescript)
 Plug 'peitalin/vim-jsx-typescript'
 "" Typescript "
 Plug 'leafgarland/typescript-vim'
+
+"autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+"autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 "let g:typescript_indent_disable = 1
 "Plug 'sheerun/vim-polyglot'
 
 """"""" Brackets & Parentheses highlighting
 " Allow autoclose paired characters like [,] or (,),
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 " Highlights the matching HTML tag when the cursor is positioned on a tag.
 " Plug 'Valloric/MatchTagAlways'
 " Valloric/MatchTagAlways"
@@ -281,8 +319,8 @@ let g:ycm_filetype_blacklist = { 'rust': 1 }
 " nnoremap <silent> tr :YcmCompleter RefactorRename
 
 " FZF Search files
-nnoremap <Leader>f :GFiles<CR>
-nnoremap <Leader>F :FZF<CR>
+nnoremap <Leader>F :GFiles<CR>
+nnoremap <Leader>f :FZF<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>c :Commits<CR>
 "nnoremap <leader>F :call fzf#vim#ag('', fzf#vim#with_preview({'options': ['--query', expand('<cword>')]}))<cr>
@@ -327,15 +365,15 @@ let g:vim_json_syntax_conceal = 0
 let g:SuperTabDefaultCompletionType = "context"
 
 "Ale
-let g:ale_lint_on_text_changed = 'always'
-let g:ale_lint_delay = 1000
-let g:airline#extensions#ale#enabled = 1
-let g:ale_fixers = {
-\  'javascript': ['eslint'],
-\  'jsx': ['eslint'],
-\  'javascript.jsx': ['eslint'],
-\  '*': ['remove_trailing_lines', 'trim_whitespace']
-\}
+"let g:ale_lint_on_text_changed = 'always'
+"let g:ale_lint_delay = 1000
+"let g:airline#extensions#ale#enabled = 1
+"let g:ale_fixers = {
+"\  'javascript': ['eslint'],
+"\  'jsx': ['eslint'],
+"\  'javascript.jsx': ['eslint'],
+"\  '*': ['remove_trailing_lines', 'trim_whitespace']
+"\}
 
 " Match vim theme to terminal base16 ones
 "if filereadable(expand("~/.vimrc_background"))
@@ -514,9 +552,10 @@ let g:lightline = {
     \ 'colorscheme': 'oneNeon_lightline',
     \ 'mode_map': { 'c': 'NORMAL' },
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ], [ 'filename' ] ]
+    \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'filename' ] ]
     \ },
     \ 'component_function': {
+    \   'gitbranch': 'fugitive#head',
     \   'modified': 'LightlineModified',
     \   'readonly': 'LightlineReadonly',
     \   'filename': 'LightlineFilename',
@@ -563,9 +602,9 @@ function! LightlineFileformat()
   return winwidth(0) > 120 ? &fileformat : ''
 endfunction
 
-let g:lightline.enable = {
-\   'tabline': 1
-\ }
+"let g:lightline.enable = {
+"\   'tabline': 1
+"\ }
 
 function! ResizeCmdHeight()
   if &columns < 90
@@ -587,7 +626,11 @@ set termguicolors
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
+"let ayucolor="light"
 colorscheme ayu
+"colorscheme embark
+"set background=light
+"colorscheme solarized
 " colorscheme onedark
 " colorscheme japanesque
 " colorscheme srcery
@@ -606,7 +649,7 @@ highlight vimError guifg=#f57373 guibg=#804040
 hi IndentGuidesEven guibg=#2a2e30 guifg=#24282a
 hi IndentGuidesOdd guibg=#262a2c guifg=#24282a
 hi Comment cterm=italic guifg=#4a5158
-hi String guifg=#98C379 guibg=#2a2e34
+"hi String guifg=#98C379 guibg=#2a2e34
 
 """ browns
 " function params: numbers and constants
@@ -738,11 +781,10 @@ hi CocHintHighlight    guibg=#4c4c4c cterm=italic
 hi CocErrorSign   guifg=#CD584F
 hi CocWarningSign guifg=#D3785D
 
-
 " Identify the syntax highlighting group used at the cursor
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+"map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+"\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+"\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 "let g:python_host_prog = '/usr/bin/python2'
 "let g:python3_host_prog = '/usr/bin/python3'
